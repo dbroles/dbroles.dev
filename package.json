@@ -2,7 +2,7 @@
   "name": "dbroles-dev",
   "type": "module",
   "version": "1.0.0",
-  "description": "User Manager for PostgreSQL - The open-source, privacy-first database role and user management tool",
+  "description": "User Manager for Your Database",
   "scripts": {
     "dev": "ASTRO_TELEMETRY_DISABLED=1 astro dev",
     "start": "ASTRO_TELEMETRY_DISABLED=1 astro dev",
