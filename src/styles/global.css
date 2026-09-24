@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --brand: #88AA00;
+    --brand-rgb: 136, 170, 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: #0B0E09;
+    color: #E2E8DE;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: #88AA00;
+    color: #0B0E09;
+  }
+}
+
+@layer utilities {
+  .bg-grid-pattern {
+    background-image: radial-gradient(rgba(136, 170, 0, 0.12) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  .text-glow {
+    text-shadow: 0 0 20px rgba(136, 170, 0, 0.45);
+  }
+
+  .glow-border {
+    border: 1px solid rgba(136, 170, 0, 0.25);
+    box-shadow: 0 0 15px -3px rgba(136, 170, 0, 0.15);
+  }
+
+  .glow-border-hover {
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .glow-border-hover:hover {
+    border-color: rgba(136, 170, 0, 0.6);
+    box-shadow: 0 0 25px -2px rgba(136, 170, 0, 0.35);
+  }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0B0E09;
+}
+::-webkit-scrollbar-thumb {
+  background: #242F1E;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #88AA00;
+}
+

@@ -1,0 +1,86 @@
+---
+// src/components/Footer.astro
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-[#070905] border-t border-[#1C2516] text-gray-400 text-sm">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      
+      <!-- Brand & Mission -->
+      <div class="md:col-span-2 space-y-4">
+        <div class="flex items-center space-x-3">
+          <div class="w-8 h-8 rounded-lg overflow-hidden p-0.5 bg-gradient-to-br from-[#88AA00] to-[#556B2F]">
+            <img src="/images/app-icon.png" alt="dbroles.dev" class="w-full h-full object-contain rounded-md bg-[#0E130B]" />
+            <img src="/images/app-icon-dbroles.png" alt="dbroles.dev" class="w-full h-full object-contain rounded-md bg-[#0E130B]" />
+          </div>
+          <span class="text-lg font-bold text-white tracking-tight">
+            dbroles<span class="text-[#88AA00]">.dev</span>
+          </span>
+        </div>
+        <p class="text-xs sm:text-sm text-gray-400 max-w-sm leading-relaxed">
+          Open-source, cross-platform database user and role administration. 
+          Safely delegate database user onboarding to helpdesk and security teams without handing out Superuser privileges.
+        </p>
+        <div class="flex items-center space-x-2 text-xs text-[#88AA00] font-mono">
+          <span class="w-2 h-2 rounded-full bg-[#88AA00] inline-block"></span>
+          <span>100% Free &bull; Zero Tracking &bull; No Ads &bull; No Telemetry</span>
+        </div>
+      </div>
+
+      <!-- Quick Navigation -->
+      <div>
+        <h3 class="text-xs font-mono uppercase tracking-wider text-white font-bold mb-4">Software</h3>
+        <ul class="space-y-2.5 text-xs sm:text-sm">
+          <li><a href="#overview" class="hover:text-[#88AA00] transition-colors">User Manager for PostgreSQL</a></li>
+          <li><a href="#delegation" class="hover:text-[#88AA00] transition-colors">How Delegation Works</a></li>
+          <li><a href="#screenshots" class="hover:text-[#88AA00] transition-colors">Screenshots</a></li>
+          <li><a href="#roles" class="hover:text-[#88AA00] transition-colors">PostgreSQL Role Guide</a></li>
+          <li><a href="#downloads" class="hover:text-[#88AA00] transition-colors">Download Apps</a></li>
+          <li><a href="#roadmap" class="hover:text-[#88AA00] transition-colors">Roadmap (SQL Server &amp; MySQL)</a></li>
+        </ul>
+      </div>
+
+      <!-- Community & Support -->
+      <div>
+        <h3 class="text-xs font-mono uppercase tracking-wider text-white font-bold mb-4">Connect &amp; Support</h3>
+        <ul class="space-y-2.5 text-xs sm:text-sm">
+          <li>
+            <a href="https://github.com/dbroles/postgresql" target="_blank" rel="noopener noreferrer" class="hover:text-[#88AA00] transition-colors flex items-center space-x-1.5">
+              <span>GitHub Repository</span>
+              <svg class="w-3.5 h-3.5 text-gray-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://buymeacoffee.com/dbroles" target="_blank" rel="noopener noreferrer" class="hover:text-amber-300 transition-colors flex items-center space-x-1.5 text-amber-400 font-medium">
+              <span>Buy Me a Coffee</span>
+              <svg class="w-3.5 h-3.5 text-amber-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </a>
+          </li>
+          <li>
+            <a href="mailto:contact@dbroles.dev" class="hover:text-[#88AA00] transition-colors">
+              Conference Speaker Inquiries
+            </a>
+          </li>
+          <li>
+            <a href="https://www.postgresql.org/docs/current/user-manag.html" target="_blank" rel="noopener noreferrer" class="hover:text-[#88AA00] transition-colors">
+              Official PostgreSQL Role Docs
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="mt-12 pt-8 border-t border-[#182113] flex flex-col sm:flex-row items-center justify-between text-xs text-gray-400 gap-4">
+      <div>
+        &copy; {currentYear} <strong>dbroles.dev</strong>. Built with pride by Daniel. Licensed under the PostgreSQL / BSD-style License.
+      </div>
+      <div class="flex items-center space-x-4">
+        <span>macOS &bull; Windows &bull; Linux &bull; iOS &bull; Android</span>
+      </div>
+    </div>
+  </div>
+</footer>
+

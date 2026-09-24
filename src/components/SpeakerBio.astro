@@ -1,0 +1,107 @@
+---
+// src/components/SpeakerBio.astro
+---
+
+<section id="about" class="py-16 md:py-24 bg-[#080B07] border-y border-[#202A1A] relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="max-w-4xl mx-auto rounded-3xl bg-gradient-to-b from-[#131A10] to-[#0E130B] border border-[#27351E] p-8 sm:p-12 shadow-2xl relative overflow-hidden">
+      
+      <!-- Background subtle accent -->
+      <div class="absolute -top-24 -right-24 w-72 h-72 bg-[#88AA00]/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="flex flex-col lg:flex-row items-start lg:items-center gap-8 relative z-10">
+        
+        <!-- Left: Avatar / Badge -->
+        <div class="flex-shrink-0 flex flex-col items-center">
+          <div class="relative w-28 h-28 sm:w-32 sm:h-32 rounded-2xl overflow-hidden p-1 bg-gradient-to-br from-[#88AA00] to-[#455726] shadow-brand-glow">
+            <img 
+              src="/images/app-icon.png" 
+              src="/images/app-icon-dbroles.png" 
+              alt="The User Manager Guy" 
+              class="w-full h-full object-contain rounded-[14px] bg-[#0E130B]" 
+            />
+          </div>
+          <span class="mt-3 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-[#88AA00]/15 text-[#88AA00] border border-[#88AA00]/30">
+            The User Manager Guy
+          </span>
+        </div>
+
+        <!-- Right: Story & Mission -->
+        <div class="flex-grow">
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+            Hi, I'm Daniel. <br />
+            <span class="text-[#88AA00]">Building Free Tools &bull; Sharing Knowledge Worldwide.</span>
+          </h2>
+
+          <p class="mt-4 text-sm sm:text-base text-gray-300 leading-relaxed">
+            I built <strong>User Manager</strong> because I believe database security and least-privilege delegation shouldn't require arcane DBA knowledge or dangerous superuser sharing. 
+            I don't build software to make money &mdash; I build it so as many developers, DBAs, and IT teams as possible can use it for free, with <strong>zero tracking and zero ads</strong>.
+          </p>
+
+          <p class="mt-3 text-sm sm:text-base text-gray-300 leading-relaxed">
+            My goal is to travel the world to database conferences and developer meetups to share real-world insights on database security, role delegation, and cross-platform tooling.
+          </p>
+
+          <!-- Speaking Topics Pills -->
+          <div class="mt-6 pt-6 border-t border-[#222E1A]">
+            <h4 class="text-xs font-mono uppercase tracking-wider text-gray-400 mb-3">Available for Conference Talks &amp; Meetups on:</h4>
+            <div class="flex flex-wrap gap-2 text-xs">
+              <span class="px-3 py-1.5 rounded-lg bg-[#182114] text-gray-300 border border-[#2D3D22]">
+                PostgreSQL Role Delegation Without Superuser
+              </span>
+              <span class="px-3 py-1.5 rounded-lg bg-[#182114] text-gray-300 border border-[#2D3D22]">
+                Demystifying Login vs. Group Roles
+              </span>
+              <span class="px-3 py-1.5 rounded-lg bg-[#182114] text-gray-300 border border-[#2D3D22]">
+                Cross-Platform Flutter &amp; Native Keychains
+              </span>
+              <span class="px-3 py-1.5 rounded-lg bg-[#182114] text-gray-300 border border-[#2D3D22]">
+                Least-Privilege RBAC for Growing Teams
+              </span>
+            </div>
+          </div>
+
+          <!-- CTAs -->
+          <div class="mt-8 flex flex-wrap items-center gap-4">
+            
+            <!-- Buy Me A Coffee CTA -->
+            <a
+              href="https://buymeacoffee.com/dbroles"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center space-x-2 px-5 py-2.5 text-xs sm:text-sm font-bold text-amber-950 bg-amber-400 hover:bg-amber-300 active:scale-95 rounded-xl shadow-md transition-all"
+            >
+              <svg class="w-4 h-4 text-amber-950" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+                <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+                <line x1="6" y1="1" x2="6" y2="4"></line>
+                <line x1="10" y1="1" x2="10" y2="4"></line>
+                <line x1="14" y1="1" x2="14" y2="4"></line>
+              </svg>
+              <span>Buy Me a Coffee (Optional)</span>
+            </a>
+
+            <!-- Conference / Contact CTA -->
+            <a
+              href="mailto:contact@dbroles.dev?subject=Conference%20Speaker%20Invitation%20-%20User%20Manager"
+              class="inline-flex items-center space-x-2 px-5 py-2.5 text-xs sm:text-sm font-semibold text-white bg-[#1A2316] hover:bg-[#232F1E] border border-[#314224] rounded-xl transition-all"
+            >
+              <svg class="w-4 h-4 text-[#88AA00]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              <span>Invite to Speak at Your Event</span>
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+

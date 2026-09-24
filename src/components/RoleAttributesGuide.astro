@@ -1,0 +1,204 @@
+---
+// src/components/RoleAttributesGuide.astro
+---
+
+<section id="roles" class="py-16 md:py-24 bg-[#080B07] border-y border-[#202A1A] relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Header -->
+    <div class="text-center max-w-3xl mx-auto mb-14">
+      <div class="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full text-xs font-semibold text-[#88AA00] bg-[#88AA00]/10 border border-[#88AA00]/25 mb-4">
+        <span>PostgreSQL Demystified</span>
+      </div>
+      <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+        PostgreSQL Has No "Users" or "Groups". <br />
+        <span class="text-[#88AA00]">Everything is a Role.</span>
+      </h2>
+      <p class="mt-4 text-base sm:text-lg text-gray-300 leading-relaxed">
+        PostgreSQL simplifies authorization into a single concept: <strong>Roles</strong>. 
+        Whether an entity behaves like an interactive login user or a shared permissions group is decided by its attributes.
+      </p>
+    </div>
+
+    <!-- The Login = True vs False Concept Card -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-14">
+      
+      <div class="p-6 rounded-2xl bg-[#12180F] border border-[#26341F] relative overflow-hidden">
+        <div class="flex items-center space-x-3 mb-3">
+          <div class="w-8 h-8 rounded-full bg-[#88AA00] text-black font-bold flex items-center justify-center text-sm">
+            L
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-white">Login = true &rarr; "User"</h3>
+            <p class="text-xs text-[#88AA00] font-mono">Appears on the left list</p>
+          </div>
+        </div>
+        <p class="text-sm text-gray-400 leading-relaxed">
+          When a role has <code class="text-gray-200">CANLOGIN</code>, human beings and application services can connect to the database. In User Manager, all login roles are cleanly presented on the left side of your screen.
+        </p>
+      </div>
+
+      <div class="p-6 rounded-2xl bg-[#12180F] border border-[#26341F] relative overflow-hidden">
+        <div class="flex items-center space-x-3 mb-3">
+          <div class="w-8 h-8 rounded-full bg-[#2A3622] text-gray-400 font-bold flex items-center justify-center text-sm border border-[#3E4F32]">
+            L
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-white">Login = false &rarr; "Group"</h3>
+            <p class="text-xs text-gray-400 font-mono">Appears on the right roles list</p>
+          </div>
+        </div>
+        <p class="text-sm text-gray-400 leading-relaxed">
+          When a role has <code class="text-gray-200">NOLOGIN</code>, it cannot log in directly. It acts as a permissions container (like <code class="text-gray-200">hr</code>, <code class="text-gray-200">finance</code>, or <code class="text-gray-200">us</code>) granted to users.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Interactive Role Attribute Badges Showcase -->
+    <div class="max-w-4xl mx-auto p-6 sm:p-8 rounded-2xl bg-[#10150D] border border-[#25321E] shadow-xl">
+      <div class="text-center mb-6">
+        <span class="text-xs font-mono uppercase tracking-wider text-gray-400">Interactive UI Component</span>
+        <h3 class="text-xl font-bold text-white mt-1">The 7 Role Attributes in User Manager</h3>
+        <p class="text-xs text-gray-400 mt-1">Click any circle badge to inspect its PostgreSQL behavior:</p>
+      </div>
+
+      <!-- Badge Strip -->
+      <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-6 py-4 border-y border-[#202919]" id="attribute-badges">
+        
+        <button type="button" data-attr="super" class="attr-btn group flex flex-col items-center focus:outline-none">
+          <div class="w-12 h-12 rounded-full flex items-center justify-center text-base font-bold transition-all bg-[#26311F] text-gray-400 border border-[#3A4B2F] group-hover:scale-110">
+            S
+          </div>
+          <span class="text-[11px] font-medium text-gray-400 mt-1.5 group-hover:text-white">Super</span>
+        </button>
+
+        <button type="button" data-attr="inherit" class="attr-btn group flex flex-col items-center focus:outline-none">
+          <div class="w-12 h-12 rounded-full flex items-center justify-center text-base font-bold transition-all bg-[#88AA00] text-black shadow-brand-glow group-hover:scale-110">
+            I
+          </div>
+          <span class="text-[11px] font-medium text-[#88AA00] mt-1.5 font-bold">Inherit</span>
+        </button>
+
+        <button type="button" data-attr="createrole" class="attr-btn group flex flex-col items-center focus:outline-none">
+          <div class="w-12 h-12 rounded-full flex items-center justify-center text-base font-bold transition-all bg-[#26311F] text-gray-400 border border-[#3A4B2F] group-hover:scale-110">
+            R
+          </div>
+          <span class="text-[11px] font-medium text-gray-400 mt-1.5 group-hover:text-white">CreateRole</span>
+        </button>
+
+        <button type="button" data-attr="createdb" class="attr-btn group flex flex-col items-center focus:outline-none">
+          <div class="w-12 h-12 rounded-full flex items-center justify-center text-base font-bold transition-all bg-[#26311F] text-gray-400 border border-[#3A4B2F] group-hover:scale-110">
+            D
+          </div>
+          <span class="text-[11px] font-medium text-gray-400 mt-1.5 group-hover:text-white">CreateDB</span>
+        </button>
+
+        <button type="button" data-attr="login" class="attr-btn group flex flex-col items-center focus:outline-none">
+          <div class="w-12 h-12 rounded-full flex items-center justify-center text-base font-bold transition-all bg-[#88AA00] text-black shadow-brand-glow group-hover:scale-110">
+            L
+          </div>
+          <span class="text-[11px] font-medium text-[#88AA00] mt-1.5 font-bold">Login</span>
+        </button>
+
+        <button type="button" data-attr="repl" class="attr-btn group flex flex-col items-center focus:outline-none">
+          <div class="w-12 h-12 rounded-full flex items-center justify-center text-base font-bold transition-all bg-[#26311F] text-gray-400 border border-[#3A4B2F] group-hover:scale-110">
+            P
+          </div>
+          <span class="text-[11px] font-medium text-gray-400 mt-1.5 group-hover:text-white">Repl</span>
+        </button>
+
+        <button type="button" data-attr="bypass" class="attr-btn group flex flex-col items-center focus:outline-none">
+          <div class="w-12 h-12 rounded-full flex items-center justify-center text-base font-bold transition-all bg-[#26311F] text-gray-400 border border-[#3A4B2F] group-hover:scale-110">
+            B
+          </div>
+          <span class="text-[11px] font-medium text-gray-400 mt-1.5 group-hover:text-white">Bypass</span>
+        </button>
+
+      </div>
+
+      <!-- Detail Box Updated via JS -->
+      <div id="attr-details" class="mt-6 p-5 rounded-xl bg-[#151C12] border border-[#2D3C23] min-h-[120px] flex flex-col justify-center">
+        <div class="flex items-center justify-between mb-2">
+          <h4 id="attr-title" class="text-base font-bold text-white">Inherit (I) &bull; Active</h4>
+          <span id="attr-sql" class="text-xs font-mono text-[#88AA00] bg-[#88AA00]/10 px-2 py-0.5 rounded border border-[#88AA00]/30">INHERIT</span>
+        </div>
+        <p id="attr-desc" class="text-sm text-gray-300 leading-relaxed">
+          Controls whether the role automatically inherits object privileges from roles of which it is a member. When active, if group <code class="text-gray-200">hr</code> can select <code class="text-gray-200">hr.persons</code>, any member inherits this access immediately.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<script>
+  const attributeData: Record<string, { title: string; sql: string; desc: string; isGreen: boolean }> = {
+    super: {
+      title: "Superuser (S) • Dangerous Privilege",
+      sql: "SUPERUSER | NOSUPERUSER",
+      desc: "Grants absolute bypass of all access restrictions inside the database. User Manager explicitly helps you avoid distributing Superuser, allowing operators to run safely using only CREATEROLE.",
+      isGreen: false
+    },
+    inherit: {
+      title: "Inherit (I) • Automatic Privilege Inheritance",
+      sql: "INHERIT | NOINHERIT",
+      desc: "Controls whether the user automatically inherits the object privileges (SELECT, INSERT, UPDATE, DELETE) of groups they are assigned to. When true (default in User Manager), Karen immediately gets group access.",
+      isGreen: true
+    },
+    createrole: {
+      title: "Create Role (R) • Delegation Enabler",
+      sql: "CREATEROLE | NOCREATEROLE",
+      desc: "Allows the role to create new users and alter roles that they have administrative rights over. This is the exact privilege granted to your Helpdesk or Security Ops operators.",
+      isGreen: false
+    },
+    createdb: {
+      title: "Create DB (D) • Database Provisioning",
+      sql: "CREATEDB | NOCREATEDB",
+      desc: "Allows the role to create new database catalogs. Typically restricted to database administrators and automated CI pipelines.",
+      isGreen: false
+    },
+    login: {
+      title: "Login (L) • User vs. Group Distinction",
+      sql: "LOGIN | NOLOGIN",
+      desc: "Determines if the role can establish client connections. Roles with Login=true appear on the left as Users; roles with Login=false appear on the right as Groups.",
+      isGreen: true
+    },
+    repl: {
+      title: "Replication (P) • Streaming Replication",
+      sql: "REPLICATION | NOREPLICATION",
+      desc: "Permits streaming replication connections and putting the database in physical backup mode. Required only for standby servers and replication tools.",
+      isGreen: false
+    },
+    bypass: {
+      title: "Bypass RLS (B) • Row-Level Security Override",
+      sql: "BYPASSRLS | NOBYPASSRLS",
+      desc: "Permits the role to bypass every Row-Level Security (RLS) policy. Attributes like BYPASSRLS are never inherited by child roles unless explicitly activated via SET ROLE.",
+      isGreen: false
+    }
+  };
+
+  function setupAttributes() {
+    const buttons = document.querySelectorAll('.attr-btn');
+    const titleEl = document.getElementById('attr-title');
+    const sqlEl = document.getElementById('attr-sql');
+    const descEl = document.getElementById('attr-desc');
+
+    buttons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const key = btn.getAttribute('data-attr');
+        if (!key || !attributeData[key]) return;
+
+        const data = attributeData[key];
+        if (titleEl) titleEl.textContent = data.title;
+        if (sqlEl) sqlEl.textContent = data.sql;
+        if (descEl) descEl.textContent = data.desc;
+      });
+    });
+  }
+
+  setupAttributes();
+  document.addEventListener('astro:page-load', setupAttributes);
+</script>
+

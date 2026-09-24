@@ -1,0 +1,56 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "User Manager for PostgreSQL | dbroles.dev",
+  description = "The free, privacy-first, cross-platform database role and user management app. Delegate user onboarding to the helpdesk safely without sharing SUPERUSER privileges. Available on macOS, Windows, Linux, iOS & Android.",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="dark scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#88AA00" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://dbroles.dev/" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="/images/screen-macos.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://dbroles.dev/" />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content="/images/screen-macos.png" />
+  </head>
+  <body class="bg-[#0A0D08] text-[#E0E8DC] antialiased selection:bg-[#88AA00] selection:text-black">
+    <div class="relative min-h-screen flex flex-col overflow-hidden">
+      <!-- Background subtle glow spots -->
+      <div class="pointer-events-none fixed inset-0 z-0 bg-grid-pattern opacity-40"></div>
+      <div class="pointer-events-none fixed top-[-10rem] left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-[#88AA00]/10 blur-[130px] rounded-full"></div>
+      <div class="pointer-events-none fixed bottom-[-10rem] right-[-10rem] w-[500px] h-[500px] bg-[#88AA00]/5 blur-[150px] rounded-full"></div>
+
+      <!-- Main Slot -->
+      <div class="relative z-10 flex flex-col min-h-screen">
+        <slot />
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "name": "dbroles-dev",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "User Manager for PostgreSQL - The open-source, privacy-first database role and user management tool",
+  "scripts": {
+    "dev": "ASTRO_TELEMETRY_DISABLED=1 astro dev",
+    "start": "ASTRO_TELEMETRY_DISABLED=1 astro dev",
+    "build": "ASTRO_TELEMETRY_DISABLED=1 astro build",
+    "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview",
+    "astro": "ASTRO_TELEMETRY_DISABLED=1 astro"
+  },
+  "dependencies": {
+    "@astrojs/tailwind": "^5.1.5",
+    "@tailwindcss/typography": "^0.5.16",
+    "astro": "^5.4.1",
+    "tailwindcss": "^3.4.17"
+  }
+}
